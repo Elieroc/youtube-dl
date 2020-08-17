@@ -1,0 +1,12 @@
+body {
+  background-color: #00FFFF;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+  font-style: oblique;
+  font-size: 60px;
+  font-family: Verdana;
+}

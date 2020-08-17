@@ -3,7 +3,9 @@
   <head>
     <title>Youtube MP3 Downloader</title>
     <!-- An open source project by Elieroc -->
-    <link rel="stylesheet" type="text/css" href="ressources/style.css">
+    <!-- Github of the project : -->
+    <!-- https://github.com/Elieroc/youtube-dl -->
+    <link rel="stylesheet" type="text/css" href="ressources/mystyle.css">
   </head>
   <body>
 <?php
@@ -21,8 +23,8 @@
 
     <form method="post" action="youtube-dl.php">
 
-      <input type="text" name="link"/>
-      <input type="submit" name="Valider"/>
+      <input type="text" name="link"/> <br> <br>
+      <input value ="Go" type="submit" name="Valider"/>
 
     </form>
 <?php
