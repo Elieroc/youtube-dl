@@ -6,7 +6,6 @@
   </head>
   <body>
 <?php
-//Commentaire 2
   $command_name = "youtube-dl -e " . escapeshellarg($_POST['link']);
 
   $command_id = "youtube-dl --get-id " . escapeshellarg($_POST['link']);
