@@ -1,12 +1,11 @@
 body {
   background-color: #00FFFF;
-  text-align: center;
 }
 
 h1 {
-  color: blue;
+  color: red;
   text-align: center;
-  font-style: oblique;
+  font-style: italic;
   font-size: 10px;
   font-family: fantasy;
 }
