@@ -34,4 +34,6 @@ h1 {
 
 .button:hover{
   color: #fff;
+  background-color: #088A85;
+  border: 1px solid #088A85;
 }
