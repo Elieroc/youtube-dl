@@ -1,14 +1,14 @@
 <?php
 
   // Déclaration des variables
-  $command_name = "youtube-dl -e " . escapeshellarg($_POST['link']);
+  $command_name = "youtube-dl -e " . escapeshellarg($_GET['link']);
 
-  $command_id = "youtube-dl --get-id " . escapeshellarg($_POST['link']);
+  $command_id = "youtube-dl --get-id " . escapeshellarg($_GET['link']);
 
-  $command_dl_mp4 = "youtube-dl -f mp4 " . escapeshellarg($_POST['link']);
+  $command_dl_mp4 = "youtube-dl -f mp4 " . escapeshellarg($_GET['link']);
 
   // Si aucun lien n'est passé en post, rediriger vers la page d'acceuil
-  if (!isset($_POST['link'])) {
+  if (!isset($_GET['link'])) {
     header('Location: youtube-dl.php');
   }
 
@@ -28,4 +28,14 @@
     // Déplacement dans le répertoire musiques
     $output_move = shell_exec('mv *.mp4 videos/');
 
+?>
+
+  <!-- Génération du lien pour télécharger la musique -->
+  <a href="./musiques/<?php echo $name ?>" download="<?php echo $name ?>">Télécharger la vidéo<a><br><br>
+
+  <!-- Bouton pour retourner à la page d'acceuil -->
+  <a href="./youtube-dl.php">Retour à l'acceuil<a>
+
+<?php
+  }
 ?>

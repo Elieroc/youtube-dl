@@ -2,36 +2,35 @@
 <html>
   <head>
     <title>Youtube MP3 Downloader</title>
+
     <!-- An open source project by Elieroc -->
     <!-- Github of the project : -->
     <!-- https://github.com/Elieroc/youtube-dl -->
+    
     <link rel="stylesheet" type="text/css" href="ressources/style.css">
   </head>
   <body>
     <?php
 
       // Si il n'y a pas de lien indiqué, afficher la page d'acceuil
-      if (!isset($_POST['link'])) {
+      if (!isset($_GET['link'])) {
     ?>
 
     <img src="ressources/yt-logo.png" style="width:100px;height:100px;">
 
     <h1>Youtube MP3 Downloader</h1>
 
-      <form method="post" action="youtube-dl.php">
+      <form method="get" action="youtube-dl.php">
 
         <!-- Input lien -->
         <input class="input" type="text" placeholder="Coller le lien" name="link"/>
 
         <!-- Choix du format mp3/mp4 -->
-        <form method="post" action="youtube-dl.php">
 
           <select name="choix">
             <option value="mp3">MP3</option>
             <option value="mp4">MP4</option>
           </select>
-
-        </form>
 
         <!-- Bouton "GO" -->
         <div class="container">
@@ -44,36 +43,18 @@
       }
 
       // Sinon, si le lien est indiqué et en MP3 alors :
-      elseif (isset($_POST['mp3'])) {
+      elseif ($_GET['choix'] == 'mp3') {
 
-        // Récupération de l'id de la musique
-        $id = shell_exec($command_id);
+        $mp3_redirect_link = "Location: mp3.php?link=" . $_GET['link'];
 
-        // Récupération du nom de la musique
-        $name = shell_exec($command_name) . "-" . $id . ".mp3";
+        header($mp3_redirect_link);
 
-        // Téléchargement
-        $output_dl = shell_exec($command_dl_mp3);
-        echo "<pre>$output_dl</pre>";
-
-        // Déplacement dans le répertoire musiques
-        $output_move = shell_exec('mv *.mp3 musiques/');
       }
-
+      // Sinon c'est du mp4
       else {
 
-        // Récupération de l'id de la vidéo
-        $id = shell_exec($command_id);
-
-        // Récupération du nom de la vidéo
-        $name = shell_exec($command_name) . "-" . $id . ".mp4";
-
-        // Téléchargement
-        $output_dl = shell_exec($command_dl_mp4);
-        echo "<pre>$output_dl</pre>";
-
-        // Déplacement dans le répertoire musiques
-        $output_move = shell_exec('mv *.mp4 videos/');
+        $mp4_redirect_link = "Location: mp4.php?link=" . $_GET['link'];
+        header($mp4_redirect_link);
 
     ?>
     <!-- Génération du lien pour télécharger la musique -->
