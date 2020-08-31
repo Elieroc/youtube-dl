@@ -5,7 +5,7 @@
     <!-- An open source project by Elieroc -->
     <!-- Github of the project : -->
     <!-- https://github.com/Elieroc/youtube-dl -->
-    <link rel="stylesheet" type="text/css" href="ressources/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="ressources/style.css">
   </head>
   <body>
 <?php
@@ -23,8 +23,11 @@
 
     <form method="post" action="youtube-dl.php">
 
-      <input type="text" name="link"/> <br> <br>
-      <input value ="Go" type="submit" name="Valider"/>
+      <input type="text" name="link"/>
+
+        <div class="container">
+          <button class="btn button" type="submit">GO</button>
+        </div>
 
     </form>
 <?php
