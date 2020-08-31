@@ -1,5 +1,15 @@
+@font-face {
+font-family: 'RestaurantMenu';
+src: url('restaurantmenu-webfont.eot');
+src: url('restaurantmenu-webfont.eot#iefix') format('embedded-opentype'),
+url('restaurantmenu-webfont.woff2') format('woff2'),
+url('restaurantmenu-webfont.woff') format('woff'),
+url('restaurantmenu-webfont.ttf') format('truetype'),
+url('restaurantmenu-webfont.svg#svgwpf') format('svg');
+}
+
 body {
-  background-color: #00FFFF;
+  background: linear-gradient(to right, #2EFEF7, #04B4AE);
   text-align: center;
 }
 
@@ -8,7 +18,7 @@ h1 {
   text-align: center;
   font-style: oblique;
   font-size: 60px;
-  font-family: Verdana;
+  font-family: "RestaurantMenu", sans-serif !important;
 }
 
 .container{
@@ -17,23 +27,31 @@ h1 {
 }
 
 .btn{
-  border: 1px solid #2EFEF7;
-  border-radius: 4px;
+  border: 1px solid #00BFFF;
   background: none;
-  background-color: #58ACFA;
+  background-color: #00BFFF;
   padding: 7px 40px;
   font-size: 20px;
   font-family: Arial;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.8s;
 }
 
 .button{
-  color: #0000FF;
+  color: #0040FF;
 }
 
 .button:hover{
   color: #fff;
   background-color: #088A85;
   border: 1px solid #088A85;
+}
+
+.input{
+  border: hidden;
+  background: linear-gradient(to right, #0040FF, #DF01D7);
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 15px;
 }
